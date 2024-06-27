@@ -1,7 +1,7 @@
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
-// import cookieParser from "cookie-parser";
+import cookieParser from "cookie-parser";
 import { json } from "express";
 import { configDotenv } from "dotenv";
 import indexRoute from "../routes/index.route.js";
@@ -17,7 +17,7 @@ export default (app) => {
 
   app.use(json());
 
-  // app.use(cookieParser());
+  app.use(cookieParser());
 
   app.use(indexRoute);
 };
